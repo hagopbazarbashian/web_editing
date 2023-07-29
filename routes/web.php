@@ -26,8 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // Admin
-Route::resource('login', AdminLoginController::class);
-
+Route::resource('admin/login', AdminLoginController::class);
 Route::middleware(['admin:admin'])->group(function () {
     Route::get('dashbord', [AdminHomeController::class , 'index'])->name('dashbord');
     Route::resource('template', TemplateController::class);
